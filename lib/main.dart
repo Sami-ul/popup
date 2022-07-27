@@ -53,6 +53,7 @@ void main() {
 }
 
 class Page extends StatelessWidget {
+  // Widget for our actual page that is shown on startup
   const Page({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
