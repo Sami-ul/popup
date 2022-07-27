@@ -54,7 +54,6 @@ void main() {
 
 class Page extends StatelessWidget {
   const Page({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
