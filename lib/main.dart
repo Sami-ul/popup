@@ -9,6 +9,7 @@ var buttonStyle = ButtonStyle(
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0))));
 
 class Popup extends StatelessWidget {
+  // Parameter is message and this creates a popup with a blurred out background
   Popup(
     this.message, {
     // Parameter for the message we want
