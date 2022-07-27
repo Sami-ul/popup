@@ -10,28 +10,31 @@ var buttonStyle = ButtonStyle(
 
 class Popup extends StatelessWidget {
   Popup(
-    String this.message, {
+    this.message, {
+    // Parameter for the message we want
     Key? key,
   }) : super(key: key);
   String message;
   @override
   Widget build(BuildContext context) {
     return BackdropFilter(
+      // Blurs the background
       filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
       child: Container(
         color: Colors.black.withOpacity(0.1),
         child: AlertDialog(
             shape: const RoundedRectangleBorder(
+                // Rounded corners
                 borderRadius:
                     const BorderRadius.all(const Radius.circular(25))),
             title: Center(child: Text(message)), // What the text will be
             actions: [
               ElevatedButton(
-                style: buttonStyle,
+                style: buttonStyle, // Using the style we made
                 onPressed: () {
                   Navigator.pop(context); // Allows the user to close the popup
                 },
-                child: const Text('Close'),
+                child: const Text('Close'), // Text inside the button
               ),
             ]),
       ),
@@ -56,10 +59,15 @@ class Page extends StatelessWidget {
     return Scaffold(
         body: Center(
       child: ElevatedButton(
-          style: buttonStyle,
-          child: Text("Show Popup"),
+          style: buttonStyle, // Using our style
+          child: const Text("Show Popup"),
           onPressed: () {
-            showDialog(context: context, builder: (context) => Popup("Hello!"));
+            showDialog(
+              // Flutter method for showing popups
+              context: context,
+              builder: (context) => Popup(
+                  "Hello!"), // "Hello!" is the string that will show when we press the button
+            );
           }),
     ));
   }
